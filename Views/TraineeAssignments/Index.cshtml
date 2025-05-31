@@ -1,0 +1,48 @@
+﻿@model IEnumerable<HU_HDP.Models.TraineeAssignment>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trainee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Center)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trainee.TraineeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Center.CenterId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TraineeAssignmentId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TraineeAssignmentId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TraineeAssignmentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

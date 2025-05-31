@@ -1,0 +1,84 @@
+﻿@model IEnumerable<HU_HDP.Models.WeeklySchedule>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WeekName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrainingDay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrainingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Remark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trainer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Center)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Room)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Topic)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeekName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainingDay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trainer.TrainerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Center.CenterId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Room.RoomId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Topic.TopicId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.WeeklyScheduleId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.WeeklyScheduleId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.WeeklyScheduleId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

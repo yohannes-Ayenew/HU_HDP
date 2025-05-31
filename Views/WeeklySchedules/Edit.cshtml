@@ -1,0 +1,75 @@
+﻿@model HU_HDP.Models.WeeklySchedule
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>WeeklySchedule</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="WeeklyScheduleId" />
+            <div class="form-group">
+                <label asp-for="TrainerId" class="control-label"></label>
+                <select asp-for="TrainerId" class="form-control" asp-items="ViewBag.TrainerId"></select>
+                <span asp-validation-for="TrainerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CenterId" class="control-label"></label>
+                <select asp-for="CenterId" class="form-control" asp-items="ViewBag.CenterId"></select>
+                <span asp-validation-for="CenterId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RoomId" class="control-label"></label>
+                <select asp-for="RoomId" class="form-control" asp-items="ViewBag.RoomId"></select>
+                <span asp-validation-for="RoomId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TopicId" class="control-label"></label>
+                <select asp-for="TopicId" class="form-control" asp-items="ViewBag.TopicId"></select>
+                <span asp-validation-for="TopicId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WeekName" class="control-label"></label>
+                <input asp-for="WeekName" class="form-control" />
+                <span asp-validation-for="WeekName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrainingDay" class="control-label"></label>
+                <input asp-for="TrainingDay" class="form-control" />
+                <span asp-validation-for="TrainingDay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrainingDate" class="control-label"></label>
+                <input asp-for="TrainingDate" class="form-control" />
+                <span asp-validation-for="TrainingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark" class="control-label"></label>
+                <input asp-for="Remark" class="form-control" />
+                <span asp-validation-for="Remark" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
