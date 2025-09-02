@@ -1,0 +1,16 @@
+# .gitignore for ASP.NET HU_HDP Project 
+bin/ 
+obj/ 
+*.dll 
+*.exe 
+*.pdb 
+*.log 
+*.tmp 
+*.mdf 
+*.ldf 
+.vs/ 
+packages/ 
+node_modules/ 
+appsettings.Development.json 
+Thumbs.db 
+Desktop.ini 
